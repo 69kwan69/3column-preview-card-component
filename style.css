@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+
+/* Initial Settings */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Transparent-white: hsla(0, 0%, 100%, 0.75);
+    --Very-light-gray : hsl(0, 0%, 95%);
+}
+
+html {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+
+/* Content */
+.content {
+    width: 33rem;
+    margin: 3rem 0;
+    border-radius: 8px;
+
+    overflow: hidden;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    
+    padding: 5rem;
+}
+
+article:nth-child(1) {
+    background: var(--Bright-orange);
+}
+
+article:nth-child(2) {
+    background: var(--Dark-cyan);
+}
+
+article:nth-child(3) {
+    background: var(--Very-dark-cyan);
+}
+
+.title {
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-size: 4rem;
+    text-transform: uppercase;
+
+    color: var(--Very-light-gray);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+
+    color: var(--Transparent-white);
+}
+
+button {
+    width: fit-content;
+    padding: 1em 2em;
+
+    border: 2px var(--Very-light-gray) solid;
+    border-radius: 50px;
+
+    background: var(--Very-light-gray);
+    color: #000;
+    
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    mix-blend-mode: screen;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #000;
+    color: var(--Very-light-gray);
+
+    mix-blend-mode: screen;
+}
+
+
+/* Attribution */
+footer {
+    display: none;
+    position: absolute;
+    bottom: 1rem;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+/* Desktop Settings */
+@media only screen and (width >= 960px) {
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        width: 90rem;
+    }
+
+    article {
+        position: relative;
+        padding-bottom: 20rem;
+    }
+
+    article button {
+        position: absolute;
+        bottom: 5rem;
+    }
+}
